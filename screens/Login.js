@@ -44,6 +44,7 @@ const Login = () => {
                     }}
 
                 >
+                
                     {({ handleChange, handleBlur, handleSubmit, values }) => (<StyledFormArea>
                     <MyTextInput
                         label="Email Address"
