@@ -20,7 +20,7 @@ import {
     StyledTextInput,
     RightIcon,
     Colors,
-} from './../components/styles';
+} from '../../styles';
 
 import {View} from 'react-native';
 

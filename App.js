@@ -1,8 +1,8 @@
 import React from 'react';
 
 //screens 
-import Login from './screens/Login';
+import Booking from './src/screens/Booking';
 
 export default function App() {
-  return <Login/>;
+  return <Booking/>;
 }
