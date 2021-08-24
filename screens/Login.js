@@ -19,7 +19,11 @@ import {
     StyledInputLabel,
     StyledTextInput,
     RightIcon,
+    StyledButton,
+    ButtonText,
     Colors,
+    MsgBox,
+    Line
 } from './../components/styles';
 
 import {View} from 'react-native';
@@ -48,7 +52,7 @@ const Login = () => {
                     <MyTextInput
                         label="Email Address"
                         icon="mail"
-                        placeholder="yata_woldeab@hotmail.com"
+                        placeholder="user@gmail.com"
                         placeholderTextColor= {darkLight}
                         onChangeText={handleChange('email')}
                         onBlur={handleBlur('email')}
@@ -71,6 +75,18 @@ const Login = () => {
                         setHidePassword={setHidePassword}
 
                     />
+                    <MsgBox>...</MsgBox>
+                    <StyledButton onPress={handleSubmit}>
+                        <ButtonText>
+                            Login
+                        </ButtonText>
+                    </StyledButton>
+                    <Line/>
+                    <StyledButton onPress={handleSubmit}>
+                        <ButtonText>
+                            Sign in Google
+                        </ButtonText>
+                    </StyledButton>
                 </StyledFormArea>)}
                 </Formik>
             </InnerContainer>

@@ -10,7 +10,7 @@ export const Colors = {
     secondary: "#E5E7EB",
     tertiary: "#1F2937",
     darkLight: "#9CA3AF",
-    brand: "#6D28D9",
+    brand: "#C3B1E1",
  
     
 };
@@ -57,7 +57,7 @@ export const StyledFormArea = styled.View`
     width: 90%;
 `;
 
-export const StyleTextInput = styled.TextInput`
+export const StyledTextInput = styled.TextInput`
     background-color: ${secondary};
     padding: 15px;
     padding-left: 55px;
@@ -90,10 +90,11 @@ export const RightIcon = styled.TouchableOpacity`
     z-index: 1; 
 `;
 
-export const StyledTextInput = styled.TouchableOpacity`
+export const StyledButton = styled.TouchableOpacity`
     padding: 15px;
-    background-color: ${secondary};
+    background-color: ${brand};
     justify-content: center;
+    align-items: center;
     border-radius: 5px;
     margin-vertical: 5px;
     height: 60px;
@@ -104,4 +105,16 @@ export const ButtonText = styled.Text`
     color: ${primary};
     font-size: 16px;
 
+`;
+
+export const MsgBox = styled.Text`
+    text-align: center;
+    font-size: 13px
+`;
+
+export const Line = styled.View`
+    height: 1px;
+    width: 100%;
+    background-color: ${darkLight};
+    margin-vertical: 10px;
 `;
