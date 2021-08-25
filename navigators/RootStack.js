@@ -9,9 +9,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './../screens/Login';
 import Signup from './../screens/Signup';
 import Landing from './../screens/Landing';
+import Locations from './../screens/Locations';
+
 
 const Stack = createNativeStackNavigator();
 
+
+  
 const RootStack = () =>{
     return(
         <NavigationContainer>
@@ -26,13 +30,27 @@ const RootStack = () =>{
                     headerLeftContainerStyle:{
                         paddingLeft: 20
                     }
-
                 }}
                 initialRouteName="Landing"
                 >
-                <Stack.Screen name="Login" component={Login} />
+
+                <Stack.Screen  name="Login" component={Login} />
                 <Stack.Screen name="Signup" component={Signup} />
-                <Stack.Screen name="Landing" component={Landing} />          
+                <Stack.Screen name="Landing" component={Landing} />   
+                <Stack.Screen  
+                    options={{
+                    headerStyle:{
+                    backgroundColor: ''
+                    },
+                    headerTintColor: tertiary,
+                    headerTransparent: true,
+                    headerTitle: 'My Locations',
+                    headerLeftContainerStyle:{
+                        paddingLeft: 10
+                    }
+
+                }}name="Locations" component={Locations} />          
+
             </Stack.Navigator>
         </NavigationContainer>
     )

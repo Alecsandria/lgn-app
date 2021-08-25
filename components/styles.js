@@ -134,7 +134,7 @@ export const StyledTextInput = styled.TextInput`
     color: ${tertiary};
 `;
 
-export const StyledInputLabel = styled.Text `
+export const StyledInputLabel = styled.Text`
     color: ${tertiary};
     font-size: 13px;
     text-align: left;
@@ -216,4 +216,43 @@ export const TextLink = styled.TouchableOpacity`
 export const TextLinkContent = styled.Text`
     color: ${brand};
     font-size: 15px;
+`;
+//Locations page
+
+export const LocationContainerAdd = styled.TouchableOpacity`
+    background-color: #fcfcfc;
+    box-shadow: 2px 2px 3px grey;
+    width: 100%;
+    height:70px;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 70px;
+`;
+export const LocationContainer = styled.TouchableOpacity`
+    background-color: #fcfcfc;
+    box-shadow: 2px 2px 3px grey;
+    width: 100%;
+    height:100px;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 60px;
+`;
+
+export const LocationTitleText = styled.Text`
+    color: ${landing};
+    font-size: 20px;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+
+    
+`;
+
+export const LocationBodyText = styled.Text`
+    color: ${landing};
+    font-size: 16px;
+    text-align: left;
+    marginTop: 20px;
+
+ 
 `;

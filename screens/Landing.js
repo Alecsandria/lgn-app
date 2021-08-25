@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React from 'react';
 
 
 import {
@@ -36,7 +36,7 @@ const Landing = ({navigation}) => {
     </LandingButtonLogin>
     <LandingButtonSignup onPress={() => navigation.navigate('Signup')}>
 <LandingButtonTextSignup>
-    SignUp
+    Signup
 </LandingButtonTextSignup>
     </LandingButtonSignup>
     </Parent>
