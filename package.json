@@ -1,27 +1,36 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "start": "rexpo start",
+    "start:ios": "expo run:ios",
+    "build:ios": "expo build:ios",
+    "start:android": "expo run:android",
+    "build:android": "expo build:android",
     "eject": "expo eject"
   },
   "dependencies": {
-    "@material-ui/icons": "^4.11.2",
     "expo": "~42.0.1",
     "expo-constants": "~11.0.1",
+    "expo-dev-client": "^0.4.7",
+    "expo-splash-screen": "~0.11.2",
     "expo-status-bar": "~1.0.4",
+    "expo-updates": "~0.8.1",
     "formik": "^2.2.9",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native": "~0.63.4",
+    "react-native-date-picker": "^3.4.2",
+    "react-native-gesture-handler": "~1.10.2",
     "react-native-picker-select": "^8.0.4",
+    "react-native-reanimated": "~2.2.0",
+    "react-native-screens": "~3.4.0",
+    "react-native-unimodules": "~0.14.5",
     "react-native-web": "~0.13.12",
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
   },
-  "private": true
+  "private": true,
+  "name": "lgn-app",
+  "version": "1.0.0"
 }
