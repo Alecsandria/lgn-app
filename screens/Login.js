@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Formik } from 'formik';
 
 //icons
-import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
+import {Octicons, Ionicons, Fontisto, EvilIcons} from '@expo/vector-icons';
 
 
 import {
@@ -80,7 +80,8 @@ const Login = ({navigation}) => {
 
                     />
                     <MsgBox>...</MsgBox>
-                    <StyledButton onPress={handleSubmit}>
+                    {/* <StyledButton onPress={handleSubmit} > */}
+                    <StyledButton onPress={() => navigation.navigate('MapScreen')}>
                         <ButtonText>
                             Login
                         </ButtonText>
