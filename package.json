@@ -1,13 +1,16 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "start": "rexpo start",
+    "start:ios": "expo run:ios",
+    "build:ios": "expo build:ios",
+    "start:android": "expo run:android",
+    "build:android": "expo build:android",
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.0",
+    "@expo-google-fonts/nunito": "^0.2.0",
+    "@expo/vector-icons": "^12.0.5",
     "@react-native-picker/picker": "^2.0.0",
     "@react-navigation/drawer": "^6.1.4",
     "@react-navigation/native": "^6.0.2",
@@ -15,11 +18,19 @@
     "@reduxjs/toolkit": "^1.6.1",
     "expo": "~42.0.1",
     "expo-constants": "~11.0.1",
+    "expo-dev-client": "^0.4.7",
+    "expo-device": "~3.3.0",
+    "expo-font": "~9.2.1",
+    "expo-image-picker": "~10.2.2",
+    "expo-splash-screen": "~0.11.2",
     "expo-status-bar": "~1.0.4",
+    "expo-updates": "~0.8.1",
     "formik": "^2.2.9",
+    "moment": "^2.29.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native": "~0.63.4",
+    "react-native-unimodules": "~0.14.5",
     "react-native-dotenv": "^3.2.0",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "^1.10.3",
@@ -40,5 +51,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.0"
   },
-  "private": true
+  "private": true,
+  "name": "lgn-app",
+  "version": "1.0.0"
 }

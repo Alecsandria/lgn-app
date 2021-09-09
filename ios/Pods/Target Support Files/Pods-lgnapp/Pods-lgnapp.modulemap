@@ -1,0 +1,6 @@
+module Pods_lgnapp {
+  umbrella header "Pods-lgnapp-umbrella.h"
+
+  export *
+  module * { export * }
+}
