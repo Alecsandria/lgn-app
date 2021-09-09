@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native";
 
 const bookingStyles = StyleSheet.create({
-  heading: {
-    paddingTop: 25,
-    paddingBottom: 10, 
+  cardTitle: {
     fontSize: 18, 
-    fontWeight: "600"
+    color: "#7246A6"
+  },
+  content: {
+    paddingTop: 14
   }
 });
 
