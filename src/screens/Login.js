@@ -40,7 +40,7 @@ const Login = ({navigation}) => {
     const [hidePassword, setHidePassword] = useState(true)
     return(
         <StyledContainer>
-            {/* <StatusBar style= "dark"/> */}
+            <StatusBar style= "dark"/>
             <InnerContainer>
                 <PageLogo resizeMode="cover" source={require('./../assets/img/img1.png')}/>
                 <PageTitle> Lets Get Naild</PageTitle>

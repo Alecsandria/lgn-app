@@ -1,15 +1,15 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View , TouchableOpacity} from 'react-native'
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 
 import tw from 'tailwind-react-native-classnames';
-import Map from '../components/Map';
-import { Colors, StyledContainerLoc2 } from './../components/styles';
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { GOOGLE_MAPS_APIKEY } from '@env';
-import { setDestination, setOrigin } from '../slices/navSlice';
+import Map from './Map';
+// import { Colors, StyledContainerLoc2 } from './../components/styles';
+// import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+// import { GOOGLE_MAPS_APIKEY } from '@env';
+// import { setDestination, setOrigin } from '../slices/navSlice';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import NavigateCard from "../components/NavigateCard"
+import NavigateCard from "./../components/NavigateCard"
 import { Icon } from 'react-native-elements/dist/icons/Icon';
 
 

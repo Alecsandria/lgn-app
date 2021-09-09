@@ -4,7 +4,7 @@ import tw from 'tailwind-react-native-classnames';
 import { StatusBar } from 'expo-status-bar';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { GOOGLE_MAPS_APIKEY } from '@env';
-import { selectOrigin, setDestination, setOrigin } from '../slices/navSlice';
+import { selectOrigin, setDestination, setOrigin } from './../../slices/navSlice';
 import { Colors, StyledContainerLoc,LocationContainer, AddButton } from './../components/styles';
 import { SafeAreaView } from 'react-native';
 import { useDispatch } from 'react-redux';
