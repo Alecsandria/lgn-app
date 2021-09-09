@@ -1,19 +1,17 @@
 import React from 'react';
-import { View } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
- 
-import Booking from './src/screens/BookingDetails/BookingDetails';
-import styles from "./src/styles/general"
+import { Provider } from 'react-redux';
+import { StyleSheet } from 'react-native';
+import 'react-native-gesture-handler';
+import RootStack from './navigators/RootStack';
+import { store } from './store';
 
 export default function App() {
   return (
-    <View style={styles.mainBackgroundColour}>
-      <View>
-        <StatusBar style="dark" />
-      </View>
-      <View>
-        <Booking/>
-      </View>
-    </View>
+    <Provider store={store}>
+    
+        <RootStack />
+    
+    </Provider>
   );
 }
+

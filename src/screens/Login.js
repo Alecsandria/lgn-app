@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Formik } from 'formik';
 
 //icons
-import {Octicons, Ionicons} from '@expo/vector-icons';
+import {Octicons, Ionicons, Fontisto, EvilIcons} from '@expo/vector-icons';
 
 
 import {
@@ -19,15 +19,23 @@ import {
     StyledInputLabel,
     StyledTextInput,
     RightIcon,
+    StyledButton,
+    ButtonText,
     Colors,
-} from '../../styles';
+    MsgBox,
+    Line,
+    ExtraText,
+    ExtraView,
+    TextLink,
+    TextLinkContent,
+} from './../components/styles';
 
 import {View} from 'react-native';
 
 //colours
-const {brand, darkLight } = Colors;
+const {brand, darkLight, primary } = Colors;
 
-const Login = () => {
+const Login = ({navigation}) => {
 
     const [hidePassword, setHidePassword] = useState(true)
     return(
@@ -48,7 +56,7 @@ const Login = () => {
                     <MyTextInput
                         label="Email Address"
                         icon="mail"
-                        placeholder="yata_woldeab@hotmail.com"
+                        placeholder="user@gmail.com"
                         placeholderTextColor= {darkLight}
                         onChangeText={handleChange('email')}
                         onBlur={handleBlur('email')}
@@ -60,7 +68,7 @@ const Login = () => {
                         <MyTextInput
                         label="Password"
                         icon="lock"
-                        placeholder="* * * * * *"
+                        placeholder="* * * * *"
                         placeholderTextColor= {darkLight}
                         onChangeText={handleChange('password')}
                         onBlur={handleBlur('password')}
@@ -71,6 +79,25 @@ const Login = () => {
                         setHidePassword={setHidePassword}
 
                     />
+                    <MsgBox>...</MsgBox>
+                    {/* <StyledButton onPress={handleSubmit} > */}
+                    <StyledButton onPress={() => navigation.navigate('MapScreen')}>
+                        <ButtonText>
+                            Login
+                        </ButtonText>
+                    </StyledButton>
+                    <Line/>
+                    <StyledButton google={true} onPress={handleSubmit}>
+                        <Fontisto name="google" color={primary} size={25}/>
+
+                        <ButtonText google={true} >Sign in with Google</ButtonText>
+                    </StyledButton>
+                    <ExtraView>
+                        <ExtraText>Don't have an account already? </ExtraText>
+                    </ExtraView>
+                    <TextLink onPress={() => navigation.navigate('Signup')}>
+                        <TextLinkContent>Signup</TextLinkContent>
+                    </TextLink>
                 </StyledFormArea>)}
                 </Formik>
             </InnerContainer>
