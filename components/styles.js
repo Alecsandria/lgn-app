@@ -273,5 +273,6 @@ justify-content: center;
 align-items: center;
 border-radius: 5px;
 height: 50px;
-width: 300px;
+width: 200px;
+padding: 5px;
 `;

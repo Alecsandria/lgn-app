@@ -13,9 +13,9 @@ import { useNavigation } from '@react-navigation/native';
 import {FontAwesome5} from '@expo/vector-icons';
 import {Octicons, Ionicons, Fontisto, EvilIcons} from '@expo/vector-icons';
 import NavFavourites from '../components/NavFavourites';
-import PickerPage from '../components/PickerPage';
+// import PickerPage from '../components/PickerPage';
 
-import {Picker} from '@react-native-picker/picker';
+// import {Picker} from '@react-native-picker/picker';
 import { useState } from 'react';
 
 import {
@@ -31,9 +31,12 @@ const Locations = () => {
 
   return (
     <SafeAreaView>
-
- <View style={tw `h-full bg-white`}>
- <Text style={tw ` text-left p-0 text-lg font-semibold px-6 pt-10		`}>Add a Location</Text>
+ <View style={tw `h-1/2 bg-white`}>
+         <NavFavourites/>
+         </View>
+   <View style={tw `h-1/2 bg-white`}>
+         <Text style={tw ` text-left p-0 text-lg font-semibold px-6 pt-10		`}>Add a Location
+ </Text>
   <GooglePlacesAutocomplete
 
           placeholder="Add Location"
@@ -59,14 +62,6 @@ const Locations = () => {
           debounce={400}
         />
                  <Text style={tw ` text-left p-0 text-lg font-semibold px-6 pt-10	`}>Pick a nickname</Text>
-
-         <PickerPage/>
-         <AddButton>
-  <ButtonText>
-    Add
-  </ButtonText>
-</AddButton>
-         <NavFavourites/>
 
 
       </View>
