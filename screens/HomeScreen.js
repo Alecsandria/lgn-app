@@ -12,6 +12,7 @@ import { GOOGLE_MAPS_APIKEY } from '@env';
 import { setDestination, setOrigin } from '../slices/navSlice';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import NavigateCard from "../components/NavigateCard"
+import NewLocationCard from '../components/NewLocationCard';
 import { Icon } from 'react-native-elements/dist/icons/Icon';
 
 const HomeScreen = () => {
@@ -35,6 +36,16 @@ const HomeScreen = () => {
                     <Stack.Screen
                     name="NavigationCard"
                     component={NavigateCard}
+                    options={{
+                        headerShown: false,
+                        
+                    }}
+                
+                    >
+                    </Stack.Screen>
+                    <Stack.Screen
+                    name="NewLocation"
+                    component={NewLocationCard}
                     options={{
                         headerShown: false,
                         

@@ -17,11 +17,12 @@ import NavFavourites from '../components/NavFavourites';
 
 // import {Picker} from '@react-native-picker/picker';
 import { useState } from 'react';
-
+import NewLocationCard from '../components/NewLocationCard'
 import {
   
   ButtonText
 } from './../components/styles';
+import { paddingLeft } from 'styled-system';
 const { landing, primary, brand, brand2 } = Colors;
 
 const Locations = () => {
@@ -31,37 +32,16 @@ const Locations = () => {
 
   return (
     <SafeAreaView>
- <View style={tw `h-1/2 bg-white`}>
-         <NavFavourites/>
+ <View style={tw `h-1/2	bg-white`}>
+ <Text style={tw ` text-left p-0 text-lg font-semibold px-6 pt-10		`}>Add a Location
+ </Text>
+ <TouchableOpacity onPress={() => navigation.navigate('NewLocationCard')}>
+ <Ionicons name={ 'add-circle' } size={20} style={tw ` pl-10	flex flex-row justify-between`} />
+ </TouchableOpacity>
          </View>
    <View style={tw `h-1/2 bg-white`}>
-         <Text style={tw ` text-left p-0 text-lg font-semibold px-6 pt-10		`}>Add a Location
- </Text>
-  <GooglePlacesAutocomplete
-
-          placeholder="Add Location"
-          styles={toInputBoxStyles}
-
-          onPress={(data, details = null) =>  {
-            dispatch(setOrigin({
-              location: details.geometry.location,
-              description: data.description,
-            }))
-            dispatch(setDestination(null));
-            navigation.navigate('MapScreen')
-          }}
-          fetchDetails={true}
-          returnKeyType={'search'}
-          enablePoweredByContainer={false}
-          minLength={2}
-          query={{
-            key: GOOGLE_MAPS_APIKEY,
-            language: 'en',
-          }}
-          nearbyPlacesAPI="GooglePlacesSearch"
-          debounce={400}
-        />
-                 <Text style={tw ` text-left p-0 text-lg font-semibold px-6 pt-10	`}>Pick a nickname</Text>
+   
+   <NavFavourites/>
 
 
       </View>

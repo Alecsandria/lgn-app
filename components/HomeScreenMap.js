@@ -6,32 +6,30 @@ import { selectOrigin } from '../slices/navSlice';
 import { useSelector } from 'react-redux';
 import {locations} from '../Data/Data';
 
-const Map = () => {
+const HomeScreenMap = () => {
     const origin = useSelector(selectOrigin);
     return (
         <MapView
         style={tw `flex-1` }
         mapType={"mutedStandard"}
         initialRegion={{
-          latitude: 51.5074,
-          longitude: 0.1278,
+          latitude: 51.5465,
+          longitude: 0.1058,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
        
         }}
         >
-            {/* {
+            {
                 locations.map(marker =>(
 
                     <Polygon coordinates={locations}
-                    strokeWidth={1}        // The width of the outline of the shape
-        strokeColor='#4099FF'  // Color of the outline
-        fillColor='rgba(...)'  // Shape color
+                      
                     />
                 ) )
             }
-     */}
-
+    
+{/* 
                 {
                     locations.map(marker => (
                         <Marker
@@ -41,7 +39,7 @@ const Map = () => {
                         />
                     ))
                     
-                } 
+                }  */}
                         
    
         </MapView>
@@ -52,7 +50,7 @@ const Map = () => {
     )
 }
 
-export default Map
+export default HomeScreenMap
 
 const styles = StyleSheet.create({})
 

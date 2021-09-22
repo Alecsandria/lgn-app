@@ -16,6 +16,8 @@ const NavigateCard = () => {
             <Text style={tw ` text-center py-5 text-xl`}>Where would you like to book your appointment?</Text>
             <View style={tw ` border-t border-gray-200 flex-shrink`}>
             <View>
+            <Text style={tw ` text-left p-0 text-lg font-semibold px-6 pt-10`}>Add a new Location
+ </Text>
 <GooglePlacesAutocomplete 
 placeholder="Location"
 styles={toInputBoxStyles}
@@ -29,7 +31,7 @@ onPress={(data, details = null) =>  {
         description: data.description,
     })
     );
-    // navigation.navigate('RideOptionCard')
+    navigation.navigate('NewLocation')
   
   }}
 enablePoweredByContainer={false}
