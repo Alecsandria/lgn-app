@@ -27,11 +27,13 @@ const Authentication = ({navigation}) => {
       .auth()
       .signInWithCredential(credential)
       .then((result) => {
-       
-        
+        console.log(result); 
+        navigation.navigate('HomeScreen')    
       });
-    
+
   };
+
+
 
   return (
     <KeyboardAwareScrollView contentContainerStyle={styles.container}>
