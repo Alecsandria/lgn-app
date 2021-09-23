@@ -10,6 +10,8 @@ import Payments from './../screens/Payments';
 import NewLocationCard from './NewLocationCard';
 import HomeScreen from '../screens/HomeScreen';
 import DrawerNaviagtion from './DrawerNaviagtion'
+import Authentication from './Authentication';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -19,7 +21,7 @@ const MainStackNavigator = () => {
     screenOptions={{
       headerShown: false
     }}
-    initialRouteName="Landing"
+    initialRouteName="Authentication"
   >
     <Stack.Screen name="Login" component={Login}
      />
@@ -29,9 +31,10 @@ const MainStackNavigator = () => {
     <Stack.Screen name="Bookings" component={Bookings}/>
     <Stack.Screen name="Payments" component={Payments}/>
     <Stack.Screen name="New Location" component={NewLocationCard}/>
-
-
+    <Stack.Screen name="Authentication" component={Authentication}/>
+    
     <Stack.Screen name="HomeScreen" component={DrawerNaviagtion}
+    
     navigationOptions={ {
       headerLeft: null,
            

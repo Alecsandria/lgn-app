@@ -1,17 +1,4 @@
 import React , {useState} from 'react';
-import { StatusBar } from 'expo-status-bar';
-
-//formik
-import { Formik } from 'formik';
-
-//icons
-import {Octicons, Ionicons, Fontisto, EvilIcons} from '@expo/vector-icons';
-
-
-// import {
-   
-// } from './../components/styles';
-
 import {ImageBackground, ScrollView, View, Dimensions, Text, StyleSheet, KeyboardAvoidingView,
      TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';

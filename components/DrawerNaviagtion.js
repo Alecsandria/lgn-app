@@ -8,6 +8,7 @@ import Payments from './../screens/Payments';
 import Sidebar
  from './Sidebar';
 import{createDrawerNavigator} from '@react-navigation/drawer';
+import Authentication from './Authentication';
 
 import tw from 'tailwind-react-native-classnames';
 
@@ -60,6 +61,16 @@ const DrawerNaviagtion = () => {
       <Drawer.Screen
       name="Payments"
       component={Payments}
+      options={{
+          drawerIcon:({focused, color , size}) => (
+              <Icon name="payment" style={{fontSize: size, color: color }} />
+          )
+      }}>
+          
+      </Drawer.Screen>
+      <Drawer.Screen
+      name="Authentication"
+      component={Authentication}
       options={{
           drawerIcon:({focused, color , size}) => (
               <Icon name="payment" style={{fontSize: size, color: color }} />
