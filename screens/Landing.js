@@ -19,7 +19,6 @@ import {
 const {landing, primary,brand} = Colors;
 
 const Landing = ({navigation}) => {
-
     return(
         
         
@@ -29,7 +28,7 @@ const Landing = ({navigation}) => {
     </LandingImage>
 
     <Parent>
-    <LandingButtonLogin onPress={() => navigation.navigate('Login')}>
+    <LandingButtonLogin onPress={() => navigation.navigate('Authentication')}>
         <LandingButtonTextLogin>
             Login
         </LandingButtonTextLogin>

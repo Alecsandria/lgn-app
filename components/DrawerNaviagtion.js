@@ -5,12 +5,11 @@ import HomeScreen from '../screens/HomeScreen';
 import { Icon } from 'react-native-elements/dist/icons/Icon';
 import Bookings from './../screens/Bookings';
 import Payments from './../screens/Payments';
-import Sidebar
- from './Sidebar';
+import Sidebar from './Sidebar';
 import{createDrawerNavigator} from '@react-navigation/drawer';
 
 import tw from 'tailwind-react-native-classnames';
-
+import { NavigationContainer } from '@react-navigation/native';
 const Drawer =  createDrawerNavigator();
 
 
@@ -18,15 +17,8 @@ const Drawer =  createDrawerNavigator();
 const DrawerNaviagtion = () => {
   return(
     <Drawer.Navigator drawerContent={props => <Sidebar {...props} />}
-
     screenOptions={{
-      
-   
-
-      
-      }}
->
-    
+      }}>
     <Drawer.Screen
       name="Home"
       component={HomeScreen}

@@ -25,21 +25,45 @@ import {
 import { paddingLeft } from 'styled-system';
 const { landing, primary, brand, brand2 } = Colors;
 
-const Locations = () => {
+const Locations  = ({navigation}) => {
   const dispatch = useDispatch();
   const origin = useSelector(selectOrigin);
-  const navigation =useNavigation();
 
   return (
     <SafeAreaView>
- <View style={tw `h-1/2	bg-white`}>
+ <View style={tw `h-3/5 bg-white`}>
  <Text style={tw ` text-left p-0 text-lg font-semibold px-6 pt-10		`}>Add a Location
  </Text>
- <TouchableOpacity onPress={() => navigation.navigate('NewLocationCard')}>
+ <TouchableOpacity onPress={() => navigation.navigate('NewLocation')}>
  <Ionicons name={ 'add-circle' } size={20} style={tw ` pl-10	flex flex-row justify-between`} />
  </TouchableOpacity>
+ {/* <GooglePlacesAutocomplete
+
+placeholder="Add Location"
+styles={toInputBoxStyles}
+
+onPress={(data, details = null) =>  {
+  dispatch(setOrigin({
+    location: details.geometry.location,
+    description: data.description,
+  }))
+  dispatch(setDestination(null));
+  navigation.navigate('MapScreen')
+}}
+fetchDetails={true}
+returnKeyType={'search'}
+enablePoweredByContainer={false}
+minLength={2}
+query={{
+  key: GOOGLE_MAPS_APIKEY,
+  language: 'en',
+}}
+nearbyPlacesAPI="GooglePlacesSearch"
+debounce={400}
+/> */}
          </View>
-   <View style={tw `h-1/2 bg-white`}>
+         
+   <View style={tw `h-2/5 bg-white`}>
    
    <NavFavourites/>
 

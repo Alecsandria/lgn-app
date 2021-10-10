@@ -11,17 +11,19 @@ import NewLocationCard from './NewLocationCard';
 import HomeScreen from '../screens/HomeScreen';
 import DrawerNaviagtion from './DrawerNaviagtion'
 import Authentication from './Authentication';
-
-
+import Confirmation from './Confirmation';
+import List from './List';
+import Sidebar from './Sidebar';
 
 const Stack = createNativeStackNavigator();
 const MainStackNavigator = () => {
   return (
+    
     <Stack.Navigator
     screenOptions={{
       headerShown: false
     }}
-    initialRouteName="Authentication"
+    initialRouteName="Landing"
   >
     <Stack.Screen name="Login" component={Login}
      />
@@ -30,8 +32,12 @@ const MainStackNavigator = () => {
     <Stack.Screen name="MapScreen" component={MapScreen}/>
     <Stack.Screen name="Bookings" component={Bookings}/>
     <Stack.Screen name="Payments" component={Payments}/>
-    <Stack.Screen name="New Location" component={NewLocationCard}/>
+    <Stack.Screen name="NewLocation" component={NewLocationCard}/>
     <Stack.Screen name="Authentication" component={Authentication}/>
+    <Stack.Screen name="Confirmation" component={Confirmation}/>
+    <Stack.Screen name="List" component={List}/>
+
+
     
     <Stack.Screen name="HomeScreen" component={DrawerNaviagtion}
     

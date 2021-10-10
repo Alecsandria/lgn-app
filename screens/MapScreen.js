@@ -11,6 +11,9 @@ import { setDestination, setOrigin } from '../slices/navSlice';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import NavigateCard from "../components/NavigateCard"
 import { Icon } from 'react-native-elements/dist/icons/Icon';
+import HomeScreenMap from '../components/HomeScreenMap';
+import NewLocationCard from '../components/NewLocationCard';
+import PinPoint from '../components/PinPoint';
 
 
 const MapScreen = () => {
@@ -32,14 +35,24 @@ const MapScreen = () => {
             <View style={tw `h-1/2`}>
                 <Stack.Navigator>
                     <Stack.Screen
-                    name="NavigationCard"
-                    component={NavigateCard}
+                    name="PinPoint"
+                    component={PinPoint}
                     options={{
                         headerShown: false,
                     }}
                     >
                     </Stack.Screen>
-                </Stack.Navigator>
+                    {/* <Stack.Screen
+                    name="NewLocation"
+                    component={NewLocationCard}
+                    options={{
+                        headerShown: false,
+                    }}
+                    >
+                    </Stack.Screen> */}
+                    
+                    
+                </Stack.Navigator> 
             </View>
            
        

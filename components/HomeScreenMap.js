@@ -22,8 +22,10 @@ const HomeScreenMap = () => {
         >
             {
                 locations.map(marker =>(
-
                     <Polygon coordinates={locations}
+                    fillColor={'rgba(100, 50, 200, 0.1)'}
+                    strokeColor
+
                       
                     />
                 ) )
