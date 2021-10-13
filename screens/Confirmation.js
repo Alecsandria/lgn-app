@@ -1,103 +1,51 @@
 import React, { useRef, useState } from 'react';
-import {
-  CheckBox,
-  TouchableOpacity,
-  Text,
-  ScrollView,
-  View,
-  StyleSheet,
-  Image,
-  KeyboardAvoidingView,
-  Dimensions,
-} from 'react-native';
-import { FirebaseRecaptchaVerifierModal } from 'expo-firebase-recaptcha';
+import { ScrollView, TouchableOpacity, Text, TextInput, View, StyleSheet, KeyboardAvoidingView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import firebase from '../firebase';
-import { TextInput } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+
 import tw from 'tailwind-react-native-classnames';
 
-const Signup = () => {
+const Confirmation = (props) => {
   const navigation = useNavigation();
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [verificationId, setVerificationId] = useState(null);
-  const recaptchaVerifier = useRef(null);
-  const [name, setName] = useState('');
 
-  const sendVerification = () => {
-    const phoneProvider = new firebase.auth.PhoneAuthProvider();
-    phoneProvider
-      .verifyPhoneNumber(phoneNumber, recaptchaVerifier.current)
-      .then(
-        (verificationId) => navigation.navigate('Confirmation', { verificationId }),
-        (user) => {
-          user.user.updateProfile({
-            displayName: name,
-          });
-        },
-      )
-      .catch((error) => alert(error.message));
+  const verificationId = props.route.params.verificationId;
+  const [code, setCode] = useState('');
+
+  const confirmCode = () => {
+    const credential = firebase.auth.PhoneAuthProvider.credential(verificationId, code);
+    firebase
+      .auth()
+      .signInWithCredential(credential)
+      .then((result) => {
+        console.log(result);
+        navigation.navigate('HomeScreen');
+      });
   };
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: '#ffffff' }} showsHorizontalScrollIndicator={false}>
-      <View style={styles.ImageContainer}>
-        <Image source={require('./../assets/img/img2.png')} style={styles.Image}></Image>
-      </View>
-      <Text style={styles.brandViewText}>Let's Get Nail'd</Text>
-
-      {/* Bottom View  */}
-      {/* <View style= {styles.bottomView}>  */}
-
       <View style={tw`h-full flex-1 items-center  bg-white justify-center `}>
         <KeyboardAvoidingView keyboardVerticalOffset={50} behavior={'padding'} style={styles.containerAvoidView}>
-          {/* Welcome View */}
           <View style={{ padding: 40 }}>
-            <Text style={styles.SubTitle}> Name</Text>
-            <TextInput
-              label="Name"
-              placeholder="Enter full name"
-              placeholderTextColor="#9CA3AF"
-              keyboardType="default"
-              style={styles.TextBox}
-              value={name}
-              onChangeText={(text) => setName(text)}
-            />
-            <Text style={styles.SubTitle}> Mobile Number</Text>
-
-            <FirebaseRecaptchaVerifierModal ref={recaptchaVerifier} firebaseConfig={firebase.app().options} />
-
-            <TextInput
-              placeholder="Phone Number"
-              //   icon="phone"
-              placeholder="Enter mobile number"
-              placeholderTextColor="#9CA3AF"
-              onChangeText={(text) => setPhoneNumber(text)}
-              keyboardType="phone-pad"
-              autoCompleteType="tel"
-              style={styles.TextBox}
-            />
-
-            <Text style={styles.SubTitle}> Email Address</Text>
-            <TextInput
-              label="Email Address"
-              icon="mail"
-              placeholder="Enter email address"
-              placeholderTextColor="#9CA3AF"
-              keyboardType="email-address"
-              style={styles.TextBox}
-            />
-
-            {/* SignUp Button */}
+            <Text style={styles.SubTitle}> Enter Code</Text>
+            <View style={styles.containerInput}>
+              <TextInput
+                placeholder="Confirmation Code"
+                onChangeText={setCode}
+                keyboardType="number-pad"
+                style={styles.TextBox}
+              />
+            </View>
             <View
               style={{
-                height: 200,
+                height: 100,
                 justifyContent: 'center',
                 alignItems: 'center',
               }}
             >
-              <TouchableOpacity style={styles.LoginButton} onPress={sendVerification}>
-                <Text style={styles.LoginButtonText}>Sign Up</Text>
+              <TouchableOpacity style={styles.LoginButton} onPress={confirmCode}>
+                <Text style={styles.LoginButtonText}>Send Verification</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -107,7 +55,7 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Confirmation;
 
 const styles = StyleSheet.create({
   container: {
@@ -156,7 +104,6 @@ const styles = StyleSheet.create({
     color: '#000000',
     padding: 10,
   },
-
   bottomView: {
     flex: 1.5,
     backgroundColor: '#fdfdfd',
@@ -240,10 +187,6 @@ const styles = StyleSheet.create({
     color: '#1F2937',
   },
 
-  checkboxContainer: {
-    flexDirection: 'row',
-    marginBottom: 20,
-  },
   Image: {
     width: 225,
     height: 225,
@@ -254,4 +197,3 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
 });
-
