@@ -9,7 +9,7 @@ import firebase from '../firebase';
 
 const Sidebar = ({ ...props }) => {
   const navigation = useNavigation();
-
+  //signout
   const signOut = () => {
     firebase
       .auth()
