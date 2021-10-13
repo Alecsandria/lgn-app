@@ -14,16 +14,6 @@ import {
 
 const { landing, primary, brand } = Colors;
 
-const signOut = () => {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      navigation.replace('HomeScreen');
-    })
-    .catch((error) => alert(error.message));
-};
-
 const Landing = ({ navigation }) => {
   return (
     <LandingContainer>
@@ -33,7 +23,7 @@ const Landing = ({ navigation }) => {
         <LandingButtonLogin onPress={() => navigation.navigate('Authentication')}>
           <LandingButtonTextLogin>Login</LandingButtonTextLogin>
         </LandingButtonLogin>
-        <LandingButtonSignup onPress={signOut}>
+        <LandingButtonSignup onPress={() => navigation.navigate('Signup')}>
           <LandingButtonTextSignup>Signup</LandingButtonTextSignup>
         </LandingButtonSignup>
       </Parent>
